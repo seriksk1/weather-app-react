@@ -1,38 +1,126 @@
-.App {
-  text-align: center;
+.app{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: 0 auto;
+    filter: drop-shadow(2px 4px 6px black);
+    border-radius: 30px;
+    overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.search-wrapper{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    background-color: rgb(66, 201, 255);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input[type="search"]{
+    font-size: 18px;
+    height: 32px;
+    border: none;
+    border-radius: 10px;
+    padding: 0 10px;
+    margin-right: 10px;
+    outline:none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    content: "";
+	width: 16px;
+	height: 16px;  
+    background-image: url("search-close-btn.png");
+    background-size: contain;
+	margin-right: 2px;
+	cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+#search-btn{
+    font-size: 18px;
+    height: 32px;
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+    color: #221e23;
+    background-color: #fff;
+    transition: color linear .5s;
+    transition: background-color linear .5s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#search-btn:hover{
+    color: #fff;
+    background-color: #221e23;
+}
+
+.city{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 0px 20px 30px 20px ;
+    background-color: rgb(228 228 255);
+}
+
+.city-name{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.city-name h2{
+    margin: 0 10px 0 0;
+}
+
+.city-name img{
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+
+.not-display{
+    display: none;
+}
+
+.display{
+    display: flex;
+}
+
+.city-weather{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-radius: 15px;
+    background-color: #221e23;
+    color: #fff;
+}
+
+.weather-icon{
+    box-sizing: border-box;
+    width: 100px;
+}
+
+.city-temperature{
+    font-size: 28px;
+}
+
+.error{
+    font-size: 22px;
+    font-weight: 700;
+    color: rgb(174 18 18);
+    text-align: center;
+}
+
+@media screen and (max-width: 400px){
+    .search-wrapper{
+        flex-direction: column;
+        padding: 25px 15px;
+    }
+
+    #search-btn{
+        margin-top: 15px;
+        border: 2px solid #000;
+    }
 }
